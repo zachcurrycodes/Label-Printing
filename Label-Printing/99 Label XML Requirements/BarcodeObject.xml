@@ -1,0 +1,312 @@
+<?xml version="1.0" encoding="utf-8"?>
+<DieCutLabel Version="8.0" Units="twips">
+	<PaperOrientation></PaperOrientation>
+	<Id></Id>
+	<PaperName>30252 Address</PaperName>
+	<DrawCommands>
+		<RoundRectangle X="0" Y="0" Width="1581" Height="5040" Rx="270" Ry="270" />
+	</DrawCommands>
+	<ObjectInfo>
+		<BarcodeObject>
+			<Name></Name>
+			<ForeColor />
+			<BackColor />
+			<LinkedObjectName />
+			<Rotation></Rotation>
+			<IsMirrored></IsMirrored>
+			<IsVariable></IsVariable>
+			<Text></Text>
+			<Type></Type>
+			<Size></Size>
+			<TextPosition></TextPosition>
+			<TextFont />
+			<CheckSumFont />
+			<TextEmbedding></TextEmbedding>
+			<ECLevel>0</ECLevel>
+			<HorizontalAlignment></HorizontalAlignment>
+			<QuietZonesPadding />
+		</BarcodeObject>
+		<Bounds />
+	</ObjectInfo>
+</DieCutLabel>
+
+
+<!--<?xml version="1.0" encoding="utf-8"?>
+<DieCutLabel Version="8.0" Units="twips">
+	<PaperOrientation>Landscape</PaperOrientation>
+	<Id>Address</Id>
+	<IsOutlined>false</IsOutlined>
+	<PaperName>30252 Address</PaperName>
+	<DrawCommands>
+		<RoundRectangle X="0" Y="0" Width="1581" Height="5040" Rx="270" Ry="270" />
+	</DrawCommands>
+	<ObjectInfo>
+		<BarcodeObject>
+			<Name>SERIAL_NUMBER</Name>
+			<ForeColor Alpha="255" Red="0" Green="0" Blue="0" />
+			<BackColor Alpha="0" Red="255" Green="255" Blue="255" />
+			<LinkedObjectName />
+			<Rotation>Rotation0</Rotation>
+			<IsMirrored>False</IsMirrored>
+			<IsVariable>True</IsVariable>
+			<Text>1234567890123456789012345678901234567890</Text>
+			<Type>Code128Auto</Type>
+			<Size>Small</Size>
+			<TextPosition>Bottom</TextPosition>
+			<TextFont Family="Arial" Size="16" Bold="False" Italic="False" Underline="False" Strikeout="False" />
+			<CheckSumFont Family="Arial" Size="8" Bold="False" Italic="False" Underline="False" Strikeout="False" />
+			<TextEmbedding>None</TextEmbedding>
+			<ECLevel>0</ECLevel>
+			<HorizontalAlignment>Center</HorizontalAlignment>
+			<QuietZonesPadding Left="0" Top="0" Right="0" Bottom="0" />
+		</BarcodeObject>
+		<Bounds X="331" Y="173" Width="4365" Height="1260" />
+	</ObjectInfo>
+</DieCutLabel>-->
+	
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+    <!-- DieCut label-->
+    <xs:complexType name="DieCutLabel">
+        <xs:complexContent>
+            <xs:extension base="Label">
+                <xs:sequence>
+                    <xs:choice>
+                        <xs:element name="PaperName" type="xs:string"/>
+                        <xs:element name="CustomPaper" type="DieCutCustomPaperInfo"/>
+                    </xs:choice>
+                    <xs:element name="DrawCommands" type="DrawCommands"/>
+                    <xs:element name="ObjectInfo" type="ObjectInfo" minOccurs="0" maxOccurs="unbounded"/>
+                </xs:sequence>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+	
+	Label - 
+	<xs:complexType name="Label">
+        <xs:sequence>
+            <xs:element name="PaperOrientation" type="PaperOrientation"/>
+            <xs:element name="Id" type="xs:string"/>
+        </xs:sequence>
+
+        <xs:attribute name="Version" type="xs:string" use="required"/>
+        <xs:attribute name="Units" type="Units" use="required"/>
+    </xs:complexType>
+	
+	PaperName - Keep as "30352 Address" - used by the printer driver
+	
+	DrawCommands - keep as (X="0" Y="0" Width="1581" Height="5040" Rx="270" Ry="270") draw label’s shape, in this case a rounded rectangle
+	// see OriginalLabelFileStructure.xsd for more options
+	<xs:complexType name="DrawCommands">
+        <xs:choice minOccurs="0" maxOccurs="unbounded">
+            <xs:element name="Rectangle" type="Rectangle"/>
+            <xs:element name="RoundRectangle" type="RoundRectangle"/>
+            <xs:element name="FoldLine" type="FoldLine"/>
+            <xs:element name="CutoutShape" type="CutoutShape"/>
+            <xs:element name="Path" type="PathDrawCommand"/>
+        </xs:choice>
+    </xs:complexType>
+	<xs:complexType name="RoundRectangle">
+        <xs:attribute name="Y" type="xs:float" use="required"/>
+        <xs:attribute name="X" type="xs:float" use="required"/>
+        <xs:attribute name="Width" type="xs:float" use="required"/>
+        <xs:attribute name="Ry" type="xs:float" use="required"/>
+        <xs:attribute name="Rx" type="xs:float" use="required"/>
+        <xs:attribute name="Height" type="xs:float" use="required"/>
+    </xs:complexType>
+	
+	ObjectInfo - 
+	<xs:complexType name="ObjectInfo">
+        <xs:sequence>
+            <xs:group ref="AnyLabelObject"/>
+            <xs:element name="Bounds" type="Rectangle"/>
+        </xs:sequence>
+    </xs:complexType>
+	
+	PaperOrientation - 
+	<xs:simpleType name="PaperOrientation">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="Portrait"/>
+            <xs:enumeration value="Landscape"/>
+        </xs:restriction>
+    </xs:simpleType>
+	
+	Id - ?? : (a literal) anything allowed?
+		
+		
+	<!-- Any label object -->
+    <xs:group name="AnyLabelObject">
+        <xs:choice>
+            <xs:element name="ShapeObject" type="ShapeObject"/>
+            <xs:element name="BarcodeObject" type="BarcodeObject"/>
+            <xs:element name="DateTimeObject" type="DateTimeObject"/>
+            <xs:element name="CounterObject" type="CounterObject"/>
+            <xs:element name="TextObject" type="TextObject"/>
+            <xs:element name="AddressObject" type="AddressObject"/>
+            <xs:element name="ImageObject" type="ImageObject"/>
+            <xs:element name="CircularTextObject" type="CircularTextObject"/>
+        </xs:choice>
+    </xs:group>
+	
+
+	<!-- Barcode Object -->
+	<xs:complexType name="BarcodeObject">
+        <xs:complexContent>
+            <xs:extension base="LabelObject">
+                <xs:sequence>
+                    <xs:element name="Text" type="xs:string"/>
+                    <xs:element name="Type" type="BarcodeType"/>
+                    <xs:element name="Size" type="BarcodeSize"/>
+                    <xs:element name="TextPosition" type="BarcodeTextPosition"/>
+                    <xs:element name="TextFont" type="FontInfo"/>
+                    <xs:element name="CheckSumFont" type="FontInfo"/>
+                    <xs:element name="TextEmbedding" type="BarcodeTextEmbedding"/>
+                    <xs:element name="ECLevel" type="xs:int"/>
+                    <xs:element name="HorizontalAlignment" type="HorizontalAlignment"/>
+                    <xs:element name="QuietZonesPadding" type="Thickness"/>
+                </xs:sequence>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+	
+	
+		
+	LabelObject -	
+	<xs:complexType name="LabelObject">
+        <xs:sequence>
+            <xs:element name="Name" type="xs:string"/>
+            <xs:element name="ForeColor" type="Color"/>
+            <xs:element name="BackColor" type="Color"/>
+            <xs:element name="LinkedObjectName" type="xs:string"/>
+            <xs:element name="Rotation" type="Rotation"/>
+            <xs:element name="IsMirrored" type="Bool"/>
+            <xs:element name="IsVariable" type="Bool"/>
+        </xs:sequence>
+        <xs:attribute name="Id" type="xs:int" use="optional" />
+        <xs:attribute name="RefId" type="xs:int" use="optional"/>
+    </xs:complexType>
+		
+	Name - (literal) Name of label //should be same as filename?
+	
+	ForeColor - 
+	<xs:complexType name="Color">
+        <xs:attribute name="Alpha" type="xs:unsignedByte" use="required"/>
+        <xs:attribute name="Red" type="xs:unsignedByte" use="required"/>
+        <xs:attribute name="Green" type="xs:unsignedByte" use="required"/>
+        <xs:attribute name="Blue" type="xs:unsignedByte" use="required"/>
+    </xs:complexType>
+	
+	BackColor - 
+	<xs:complexType name="Color">
+        <xs:attribute name="Alpha" type="xs:unsignedByte" use="required"/>
+        <xs:attribute name="Red" type="xs:unsignedByte" use="required"/>
+        <xs:attribute name="Green" type="xs:unsignedByte" use="required"/>
+        <xs:attribute name="Blue" type="xs:unsignedByte" use="required"/>
+    </xs:complexType>
+	
+	LinkedObjectName - can be null, but must be included (ex <LinkedObjectName />)
+	
+	Rotation - 
+	<xs:simpleType name="Rotation">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="Rotation0"/>
+            <xs:enumeration value="Rotation90"/>
+            <xs:enumeration value="Rotation180"/>
+            <xs:enumeration value="Rotation270"/>
+        </xs:restriction>
+    </xs:simpleType>
+	
+	IsMirrored - (bool) keep as false
+	
+	IsVariable - used as a dynamic field, true to change dynamically
+
+		
+	Text - default displayed text
+	
+	Type - 
+    <xs:simpleType name="BarcodeType">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="Unknown"/>
+            <xs:enumeration value="Code39"/>
+            <xs:enumeration value="Code39CS"/>
+            <xs:enumeration value="Code128Auto"/>
+            <xs:enumeration value="Code128A"/>
+            <xs:enumeration value="Code128B"/>
+            <xs:enumeration value="Code128C"/>
+            <xs:enumeration value="Code2of5"/>
+            <xs:enumeration value="UpcA"/>
+            <xs:enumeration value="UpcE"/>
+            <xs:enumeration value="Ean8"/>
+            <xs:enumeration value="Ean13"/>
+            <xs:enumeration value="Codabar"/>
+            <xs:enumeration value="Postnet"/>
+            <xs:enumeration value="Code39LibR"/>
+            <xs:enumeration value="Code39LibL"/>
+            <xs:enumeration value="CodabarLibR"/>
+            <xs:enumeration value="CodabarLibL"/>
+            <xs:enumeration value="Code128Ean"/>
+            <xs:enumeration value="Itf14"/>
+            <xs:enumeration value="Planet"/>
+            <xs:enumeration value="Pdf417"/>
+            <xs:enumeration value="QRCode"/>
+            <xs:enumeration value="IMail"/>
+        </xs:restriction>
+    </xs:simpleType>
+	
+	Size - 
+    <xs:simpleType name="BarcodeSize">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="Small"/>
+            <xs:enumeration value="Medium"/>
+            <xs:enumeration value="Large"/>
+        </xs:restriction>
+    </xs:simpleType>
+	
+	TextPosition - 
+    <xs:simpleType name="BarcodeTextPosition">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="None"/>
+            <xs:enumeration value="Top"/>
+            <xs:enumeration value="Bottom"/>
+        </xs:restriction>
+    </xs:simpleType>
+	
+	TextFont - 
+	<xs:complexType name="FontInfo">
+        <xs:attribute name="Family" type="xs:string" use="required"/>
+        <xs:attribute name="Size" type="xs:float" use="required"/>
+        <xs:attribute name="Bold" type="Bool" use="required"/>
+        <xs:attribute name="Italic" type="Bool" use="required"/>
+        <xs:attribute name="Underline" type="Bool" use="required"/>
+        <xs:attribute name="Strikeout" type="Bool" use="required"/>
+    </xs:complexType>
+	
+	CheckSumFont - ?? : repeat TextFont
+	
+	TextEmbedding - 
+    <xs:simpleType name="BarcodeTextEmbedding">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="None"/>
+            <xs:enumeration value="Half"/>
+            <xs:enumeration value="Full"/>
+        </xs:restriction>
+    </xs:simpleType>
+	
+	ECLevel - ?? : "0" - required
+
+	HorizontalAlignment - 
+	<xs:simpleType name="HorizontalAlignment">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="Left"/>
+            <xs:enumeration value="Center"/>
+            <xs:enumeration value="Right"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+	QuietZonesPadding - 
+	<xs:complexType name="Thickness">
+        <xs:attribute name="Left" type="xs:float" use="required"/>
+        <xs:attribute name="Top" type="xs:float" use="required"/>
+        <xs:attribute name="Right" type="xs:float" use="required"/>
+        <xs:attribute name="Bottom" type="xs:float" use="required"/>
+    </xs:complexType>

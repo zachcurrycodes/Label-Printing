@@ -1,0 +1,184 @@
+﻿Installing assembly 'C:\Users\zcurry\Documents\VS Working\05 Label Printing\03 Development\PrintLabelSystem.v1dev\PrintLabelSystemService\bin\Debug\PrintLabelSystemService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   assemblypath = C:\Users\zcurry\Documents\VS Working\05 Label Printing\03 Development\PrintLabelSystem.v1dev\PrintLabelSystemService\bin\Debug\PrintLabelSystemService.exe
+   logfile = C:\Users\zcurry\Documents\VS Working\05 Label Printing\03 Development\PrintLabelSystem.v1dev\PrintLabelSystemService\bin\Debug\PrintLabelSystemService.InstallLog
+Installing service PrintLabelSystemService...
+Service PrintLabelSystemService has been successfully installed.
+Creating EventLog source PrintLabelSystemService in log Application...
+Committing assembly 'C:\Users\zcurry\Documents\VS Working\05 Label Printing\03 Development\PrintLabelSystem.v1dev\PrintLabelSystemService\bin\Debug\PrintLabelSystemService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   assemblypath = C:\Users\zcurry\Documents\VS Working\05 Label Printing\03 Development\PrintLabelSystem.v1dev\PrintLabelSystemService\bin\Debug\PrintLabelSystemService.exe
+   logfile = C:\Users\zcurry\Documents\VS Working\05 Label Printing\03 Development\PrintLabelSystem.v1dev\PrintLabelSystemService\bin\Debug\PrintLabelSystemService.InstallLog
+Uninstalling assembly 'C:\Users\zcurry\Documents\VS Working\05 Label Printing\03 Development\PrintLabelSystem.v1dev\PrintLabelSystemService\bin\Debug\PrintLabelSystemService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   assemblypath = C:\Users\zcurry\Documents\VS Working\05 Label Printing\03 Development\PrintLabelSystem.v1dev\PrintLabelSystemService\bin\Debug\PrintLabelSystemService.exe
+   logfile = C:\Users\zcurry\Documents\VS Working\05 Label Printing\03 Development\PrintLabelSystem.v1dev\PrintLabelSystemService\bin\Debug\PrintLabelSystemService.InstallLog
+Removing EventLog source PrintLabelSystemService.
+Service PrintLabelSystemService is being removed from the system...
+Service PrintLabelSystemService was successfully removed from the system.
+Installing assembly 'C:\Users\zcurry\Documents\VS Working\05 Label Printing\03 Development\PrintLabelSystem.v1dev\PrintLabelSystemService\bin\Debug\PrintLabelSystemService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   assemblypath = C:\Users\zcurry\Documents\VS Working\05 Label Printing\03 Development\PrintLabelSystem.v1dev\PrintLabelSystemService\bin\Debug\PrintLabelSystemService.exe
+   logfile = C:\Users\zcurry\Documents\VS Working\05 Label Printing\03 Development\PrintLabelSystem.v1dev\PrintLabelSystemService\bin\Debug\PrintLabelSystemService.InstallLog
+Installing service PrintLabelSystemService...
+Creating EventLog source PrintLabelSystemService in log Application...
+Rolling back assembly 'C:\Users\zcurry\Documents\VS Working\05 Label Printing\03 Development\PrintLabelSystem.v1dev\PrintLabelSystemService\bin\Debug\PrintLabelSystemService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   assemblypath = C:\Users\zcurry\Documents\VS Working\05 Label Printing\03 Development\PrintLabelSystem.v1dev\PrintLabelSystemService\bin\Debug\PrintLabelSystemService.exe
+   logfile = C:\Users\zcurry\Documents\VS Working\05 Label Printing\03 Development\PrintLabelSystem.v1dev\PrintLabelSystemService\bin\Debug\PrintLabelSystemService.InstallLog
+Restoring event log to previous state for source PrintLabelSystemService.
+Installing assembly 'C:\Users\zcurry\Documents\VS Working\05 Label Printing\03 Development\PrintLabelSystem.v1dev\PrintLabelSystemService\bin\Debug\PrintLabelSystemService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   assemblypath = C:\Users\zcurry\Documents\VS Working\05 Label Printing\03 Development\PrintLabelSystem.v1dev\PrintLabelSystemService\bin\Debug\PrintLabelSystemService.exe
+   logfile = C:\Users\zcurry\Documents\VS Working\05 Label Printing\03 Development\PrintLabelSystem.v1dev\PrintLabelSystemService\bin\Debug\PrintLabelSystemService.InstallLog
+Installing service PrintLabelSystemService...
+Creating EventLog source PrintLabelSystemService in log Application...
+Rolling back assembly 'C:\Users\zcurry\Documents\VS Working\05 Label Printing\03 Development\PrintLabelSystem.v1dev\PrintLabelSystemService\bin\Debug\PrintLabelSystemService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   assemblypath = C:\Users\zcurry\Documents\VS Working\05 Label Printing\03 Development\PrintLabelSystem.v1dev\PrintLabelSystemService\bin\Debug\PrintLabelSystemService.exe
+   logfile = C:\Users\zcurry\Documents\VS Working\05 Label Printing\03 Development\PrintLabelSystem.v1dev\PrintLabelSystemService\bin\Debug\PrintLabelSystemService.InstallLog
+Restoring event log to previous state for source PrintLabelSystemService.
+Installing assembly 'C:\Users\zcurry\Documents\VS Working\05 Label Printing\03 Development\PrintLabelSystem.v1dev\PrintLabelSystemService\bin\Debug\PrintLabelSystemService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   assemblypath = C:\Users\zcurry\Documents\VS Working\05 Label Printing\03 Development\PrintLabelSystem.v1dev\PrintLabelSystemService\bin\Debug\PrintLabelSystemService.exe
+   logfile = C:\Users\zcurry\Documents\VS Working\05 Label Printing\03 Development\PrintLabelSystem.v1dev\PrintLabelSystemService\bin\Debug\PrintLabelSystemService.InstallLog
+Installing service PrintLabelSystemService...
+Creating EventLog source PrintLabelSystemService in log Application...
+Rolling back assembly 'C:\Users\zcurry\Documents\VS Working\05 Label Printing\03 Development\PrintLabelSystem.v1dev\PrintLabelSystemService\bin\Debug\PrintLabelSystemService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   assemblypath = C:\Users\zcurry\Documents\VS Working\05 Label Printing\03 Development\PrintLabelSystem.v1dev\PrintLabelSystemService\bin\Debug\PrintLabelSystemService.exe
+   logfile = C:\Users\zcurry\Documents\VS Working\05 Label Printing\03 Development\PrintLabelSystem.v1dev\PrintLabelSystemService\bin\Debug\PrintLabelSystemService.InstallLog
+Restoring event log to previous state for source PrintLabelSystemService.
+Installing assembly 'C:\Users\zcurry\Documents\VS Working\05 Label Printing\03 Development\PrintLabelSystem.v1dev\PrintLabelSystemService\bin\Debug\PrintLabelSystemService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   assemblypath = C:\Users\zcurry\Documents\VS Working\05 Label Printing\03 Development\PrintLabelSystem.v1dev\PrintLabelSystemService\bin\Debug\PrintLabelSystemService.exe
+   logfile = C:\Users\zcurry\Documents\VS Working\05 Label Printing\03 Development\PrintLabelSystem.v1dev\PrintLabelSystemService\bin\Debug\PrintLabelSystemService.InstallLog
+Installing service PrintLabelSystemService...
+Creating EventLog source PrintLabelSystemService in log Application...
+Rolling back assembly 'C:\Users\zcurry\Documents\VS Working\05 Label Printing\03 Development\PrintLabelSystem.v1dev\PrintLabelSystemService\bin\Debug\PrintLabelSystemService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   assemblypath = C:\Users\zcurry\Documents\VS Working\05 Label Printing\03 Development\PrintLabelSystem.v1dev\PrintLabelSystemService\bin\Debug\PrintLabelSystemService.exe
+   logfile = C:\Users\zcurry\Documents\VS Working\05 Label Printing\03 Development\PrintLabelSystem.v1dev\PrintLabelSystemService\bin\Debug\PrintLabelSystemService.InstallLog
+Restoring event log to previous state for source PrintLabelSystemService.
+Installing assembly 'C:\Users\zcurry\Documents\VS Working\05 Label Printing\03 Development\PrintLabelSystem.v1dev\PrintLabelSystemService\bin\Debug\PrintLabelSystemService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = C:\Users\zcurry\Documents\VS Working\05 Label Printing\03 Development\PrintLabelSystem.v1dev\PrintLabelSystemService\bin\Debug\PrintLabelSystemService.InstallLog
+   assemblypath = C:\Users\zcurry\Documents\VS Working\05 Label Printing\03 Development\PrintLabelSystem.v1dev\PrintLabelSystemService\bin\Debug\PrintLabelSystemService.exe
+Installing service PrintLabelSystemService...
+Creating EventLog source PrintLabelSystemService in log Application...
+Rolling back assembly 'C:\Users\zcurry\Documents\VS Working\05 Label Printing\03 Development\PrintLabelSystem.v1dev\PrintLabelSystemService\bin\Debug\PrintLabelSystemService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = C:\Users\zcurry\Documents\VS Working\05 Label Printing\03 Development\PrintLabelSystem.v1dev\PrintLabelSystemService\bin\Debug\PrintLabelSystemService.InstallLog
+   assemblypath = C:\Users\zcurry\Documents\VS Working\05 Label Printing\03 Development\PrintLabelSystem.v1dev\PrintLabelSystemService\bin\Debug\PrintLabelSystemService.exe
+Restoring event log to previous state for source PrintLabelSystemService.
+Installing assembly 'C:\Users\zcurry\Documents\VS Working\05 Label Printing\03 Development\PrintLabelSystem.v1dev\PrintLabelSystemService\bin\Debug\PrintLabelSystemService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = C:\Users\zcurry\Documents\VS Working\05 Label Printing\03 Development\PrintLabelSystem.v1dev\PrintLabelSystemService\bin\Debug\PrintLabelSystemService.InstallLog
+   assemblypath = C:\Users\zcurry\Documents\VS Working\05 Label Printing\03 Development\PrintLabelSystem.v1dev\PrintLabelSystemService\bin\Debug\PrintLabelSystemService.exe
+Installing service zPrintLabelSystemService...
+Service zPrintLabelSystemService has been successfully installed.
+Creating EventLog source zPrintLabelSystemService in log Application...
+Committing assembly 'C:\Users\zcurry\Documents\VS Working\05 Label Printing\03 Development\PrintLabelSystem.v1dev\PrintLabelSystemService\bin\Debug\PrintLabelSystemService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = C:\Users\zcurry\Documents\VS Working\05 Label Printing\03 Development\PrintLabelSystem.v1dev\PrintLabelSystemService\bin\Debug\PrintLabelSystemService.InstallLog
+   assemblypath = C:\Users\zcurry\Documents\VS Working\05 Label Printing\03 Development\PrintLabelSystem.v1dev\PrintLabelSystemService\bin\Debug\PrintLabelSystemService.exe
+Uninstalling assembly 'C:\Users\zcurry\Documents\VS Working\05 Label Printing\03 Development\PrintLabelSystem.v1dev\PrintLabelSystemService\bin\Debug\PrintLabelSystemService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = C:\Users\zcurry\Documents\VS Working\05 Label Printing\03 Development\PrintLabelSystem.v1dev\PrintLabelSystemService\bin\Debug\PrintLabelSystemService.InstallLog
+   assemblypath = C:\Users\zcurry\Documents\VS Working\05 Label Printing\03 Development\PrintLabelSystem.v1dev\PrintLabelSystemService\bin\Debug\PrintLabelSystemService.exe
+Removing EventLog source zPrintLabelSystemService.
+Service zPrintLabelSystemService is being removed from the system...
+Service zPrintLabelSystemService was successfully removed from the system.
+Installing assembly 'C:\Users\zcurry\Documents\VS Working\05 Label Printing\03 Development\PrintLabelSystem.v1dev\PrintLabelSystemService\bin\Debug\PrintLabelSystemService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = C:\Users\zcurry\Documents\VS Working\05 Label Printing\03 Development\PrintLabelSystem.v1dev\PrintLabelSystemService\bin\Debug\PrintLabelSystemService.InstallLog
+   assemblypath = C:\Users\zcurry\Documents\VS Working\05 Label Printing\03 Development\PrintLabelSystem.v1dev\PrintLabelSystemService\bin\Debug\PrintLabelSystemService.exe
+Installing service zPrintLabelSystemService...
+Service zPrintLabelSystemService has been successfully installed.
+Creating EventLog source zPrintLabelSystemService in log Application...
+Committing assembly 'C:\Users\zcurry\Documents\VS Working\05 Label Printing\03 Development\PrintLabelSystem.v1dev\PrintLabelSystemService\bin\Debug\PrintLabelSystemService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = C:\Users\zcurry\Documents\VS Working\05 Label Printing\03 Development\PrintLabelSystem.v1dev\PrintLabelSystemService\bin\Debug\PrintLabelSystemService.InstallLog
+   assemblypath = C:\Users\zcurry\Documents\VS Working\05 Label Printing\03 Development\PrintLabelSystem.v1dev\PrintLabelSystemService\bin\Debug\PrintLabelSystemService.exe
+Uninstalling assembly 'C:\Users\zcurry\Documents\VS Working\05 Label Printing\03 Development\PrintLabelSystem.v1dev\PrintLabelSystemService\bin\Debug\PrintLabelSystemService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = C:\Users\zcurry\Documents\VS Working\05 Label Printing\03 Development\PrintLabelSystem.v1dev\PrintLabelSystemService\bin\Debug\PrintLabelSystemService.InstallLog
+   assemblypath = C:\Users\zcurry\Documents\VS Working\05 Label Printing\03 Development\PrintLabelSystem.v1dev\PrintLabelSystemService\bin\Debug\PrintLabelSystemService.exe
+Removing EventLog source zPrintLabelSystemService.
+Service zPrintLabelSystemService is being removed from the system...
+Service zPrintLabelSystemService was successfully removed from the system.
+Attempt to stop service zPrintLabelSystemService.
+Installing assembly 'C:\Users\zcurry\Documents\VS Working\05 Label Printing\03 Development\PrintLabelSystem.v1dev\PrintLabelSystemService\bin\Debug\PrintLabelSystemService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = C:\Users\zcurry\Documents\VS Working\05 Label Printing\03 Development\PrintLabelSystem.v1dev\PrintLabelSystemService\bin\Debug\PrintLabelSystemService.InstallLog
+   assemblypath = C:\Users\zcurry\Documents\VS Working\05 Label Printing\03 Development\PrintLabelSystem.v1dev\PrintLabelSystemService\bin\Debug\PrintLabelSystemService.exe
+Installing service zPrintLabelSystemService...
+Service zPrintLabelSystemService has been successfully installed.
+Creating EventLog source zPrintLabelSystemService in log Application...
+Committing assembly 'C:\Users\zcurry\Documents\VS Working\05 Label Printing\03 Development\PrintLabelSystem.v1dev\PrintLabelSystemService\bin\Debug\PrintLabelSystemService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = C:\Users\zcurry\Documents\VS Working\05 Label Printing\03 Development\PrintLabelSystem.v1dev\PrintLabelSystemService\bin\Debug\PrintLabelSystemService.InstallLog
+   assemblypath = C:\Users\zcurry\Documents\VS Working\05 Label Printing\03 Development\PrintLabelSystem.v1dev\PrintLabelSystemService\bin\Debug\PrintLabelSystemService.exe
+Installing assembly 'C:\Users\zcurry\Documents\VS Working\05 Label Printing\03 Development\PrintLabelSystem.v1dev\PrintLabelSystemService\bin\Debug\PrintLabelSystemService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = C:\Users\zcurry\Documents\VS Working\05 Label Printing\03 Development\PrintLabelSystem.v1dev\PrintLabelSystemService\bin\Debug\PrintLabelSystemService.InstallLog
+   assemblypath = C:\Users\zcurry\Documents\VS Working\05 Label Printing\03 Development\PrintLabelSystem.v1dev\PrintLabelSystemService\bin\Debug\PrintLabelSystemService.exe
+Installing service zPrintLabelSystemService...
+Service zPrintLabelSystemService has been successfully installed.
+Creating EventLog source zPrintLabelSystemService in log Application...
+Committing assembly 'C:\Users\zcurry\Documents\VS Working\05 Label Printing\03 Development\PrintLabelSystem.v1dev\PrintLabelSystemService\bin\Debug\PrintLabelSystemService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = C:\Users\zcurry\Documents\VS Working\05 Label Printing\03 Development\PrintLabelSystem.v1dev\PrintLabelSystemService\bin\Debug\PrintLabelSystemService.InstallLog
+   assemblypath = C:\Users\zcurry\Documents\VS Working\05 Label Printing\03 Development\PrintLabelSystem.v1dev\PrintLabelSystemService\bin\Debug\PrintLabelSystemService.exe
+Uninstalling assembly 'C:\Users\zcurry\Documents\VS Working\05 Label Printing\03 Development\PrintLabelSystem.v1dev\PrintLabelSystemService\bin\Debug\PrintLabelSystemService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = C:\Users\zcurry\Documents\VS Working\05 Label Printing\03 Development\PrintLabelSystem.v1dev\PrintLabelSystemService\bin\Debug\PrintLabelSystemService.InstallLog
+   assemblypath = C:\Users\zcurry\Documents\VS Working\05 Label Printing\03 Development\PrintLabelSystem.v1dev\PrintLabelSystemService\bin\Debug\PrintLabelSystemService.exe
+Removing EventLog source zPrintLabelSystemService.
+Service zPrintLabelSystemService is being removed from the system...
+Service zPrintLabelSystemService was successfully removed from the system.
+Installing assembly 'C:\Users\zcurry\Documents\VS Working\05 Label Printing\03 Development\PrintLabelSystem.v1dev\PrintLabelSystemService\bin\Debug\PrintLabelSystemService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = C:\Users\zcurry\Documents\VS Working\05 Label Printing\03 Development\PrintLabelSystem.v1dev\PrintLabelSystemService\bin\Debug\PrintLabelSystemService.InstallLog
+   assemblypath = C:\Users\zcurry\Documents\VS Working\05 Label Printing\03 Development\PrintLabelSystem.v1dev\PrintLabelSystemService\bin\Debug\PrintLabelSystemService.exe
+Installing service zPrintLabelSystemService...
+Service zPrintLabelSystemService has been successfully installed.
+Creating EventLog source zPrintLabelSystemService in log Application...
+Committing assembly 'C:\Users\zcurry\Documents\VS Working\05 Label Printing\03 Development\PrintLabelSystem.v1dev\PrintLabelSystemService\bin\Debug\PrintLabelSystemService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = C:\Users\zcurry\Documents\VS Working\05 Label Printing\03 Development\PrintLabelSystem.v1dev\PrintLabelSystemService\bin\Debug\PrintLabelSystemService.InstallLog
+   assemblypath = C:\Users\zcurry\Documents\VS Working\05 Label Printing\03 Development\PrintLabelSystem.v1dev\PrintLabelSystemService\bin\Debug\PrintLabelSystemService.exe
+Uninstalling assembly 'C:\Users\zcurry\Documents\VS Working\05 Label Printing\03 Development\PrintLabelSystem.v1dev\PrintLabelSystemService\bin\Debug\PrintLabelSystemService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = C:\Users\zcurry\Documents\VS Working\05 Label Printing\03 Development\PrintLabelSystem.v1dev\PrintLabelSystemService\bin\Debug\PrintLabelSystemService.InstallLog
+   assemblypath = C:\Users\zcurry\Documents\VS Working\05 Label Printing\03 Development\PrintLabelSystem.v1dev\PrintLabelSystemService\bin\Debug\PrintLabelSystemService.exe
+Removing EventLog source zPrintLabelSystemService.
+Service zPrintLabelSystemService is being removed from the system...
+Service zPrintLabelSystemService was successfully removed from the system.

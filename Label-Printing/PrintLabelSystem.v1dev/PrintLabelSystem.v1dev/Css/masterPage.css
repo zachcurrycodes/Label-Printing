@@ -1,0 +1,64 @@
+body {
+  width: 70%;
+  margin-left: auto;
+  margin-right: auto;
+  font-family: verdana, arial, sans-serif;
+  height: 100%;
+}
+
+#topContent {
+  text-align: right;
+  background-color: #450084;
+  color: White;
+  font-size: x-large;
+  text-decoration: none;
+  font-weight: bold;
+  padding: 10px;
+  height: 50px;
+}
+
+#leftContent {
+  float: left;
+  width: 15%;
+  background-color: #AD9C65;
+  color: #450084;
+  padding: 1em;
+}
+
+#mainBody {
+  float: right;
+  width: 80%;
+  padding: 1em;
+}
+
+footer { /*Not currently used*/
+  bottom: 0;
+}
+
+/* unvisited link */
+a:link {
+  color: #CBB677;
+}
+
+/* visited link */
+a:visited {
+  color: #CBB677;
+}
+
+/* mouse over link */
+a:hover {
+  color: white;
+}
+
+/* selected link */
+a:active {
+  color: white;
+}
+
+a {
+  text-decoration: none;
+}
+
+li {
+  color: black;
+}

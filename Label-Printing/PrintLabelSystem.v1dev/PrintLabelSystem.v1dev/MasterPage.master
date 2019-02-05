@@ -1,0 +1,47 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="MasterPage.master.cs" Inherits="MasterPage" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+  <title>Label Printing System</title>
+  <link rel="stylesheet" runat="server" media="screen" href="~/Css/xxx.css" />
+  <link href="Css/masterPage.css" rel="stylesheet" />
+  <asp:ContentPlaceHolder ID="head" runat="server">
+  </asp:ContentPlaceHolder>
+</head>
+<body>
+  <form id="form1" runat="server">
+    <div class="wrapper">
+      <div id="topContent">
+        <a href="Default.aspx">Print A Label</a>
+      </div>
+      <div id="leftContent">
+        <div>
+          <h1>Navigation</h1>
+          <h3>Print Page</h3>
+          <ul>
+            <li><a href="Default.aspx">Print Page</a></li>
+          </ul>
+          <h3>Label Design</h3>
+          <ul>
+            <li>Create</li>
+            <li>Edit Existing</li>
+          </ul>
+        </div>
+      </div>
+      <div id="mainBody">
+        <asp:ContentPlaceHolder ID="MainBody" runat="server">
+        </asp:ContentPlaceHolder>
+      </div>
+    </div>
+
+    <footer>
+      <script type="text/javascript">
+        document.write("Last Modified: " + document.lastModified);
+      </script>
+      <br />
+    </footer>
+  </form>
+</body>
+</html>

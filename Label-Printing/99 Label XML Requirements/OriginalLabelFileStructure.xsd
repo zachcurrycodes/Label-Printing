@@ -1,0 +1,689 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+    <!-- Enums -->
+    <xs:simpleType name="Bool">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="False"/>
+            <xs:enumeration value="True"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="PaperOrientation">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="Portrait"/>
+            <xs:enumeration value="Landscape"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="Orientation">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="Horizontal"/>
+            <xs:enumeration value="Vertical"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="ContinuousWidth">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="Width6mm"/>
+            <xs:enumeration value="Width9mm"/>
+            <xs:enumeration value="Width12mm"/>
+            <xs:enumeration value="Width19mm"/>
+            <xs:enumeration value="Width24mm"/>
+            <xs:enumeration value="Width32mm"/>
+            <xs:enumeration value="Width35mm"/>
+            <xs:enumeration value="Width54mm"/>
+            <xs:enumeration value="Width105mm"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="Rotation">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="Rotation0"/>
+            <xs:enumeration value="Rotation90"/>
+            <xs:enumeration value="Rotation180"/>
+            <xs:enumeration value="Rotation270"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="FillMode">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="EvenOdd"/>
+            <xs:enumeration value="Nonzero"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="DashStyle">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="Solid"/>
+            <xs:enumeration value="DashDotDot"/>
+            <xs:enumeration value="DashDot"/>
+            <xs:enumeration value="Dash"/>
+            <xs:enumeration value="LongDash"/>
+            <xs:enumeration value="Dot"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="Units">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="twips"/>
+            <xs:enumeration value="pt"/>
+            <xs:enumeration value="inch"/>
+            <xs:enumeration value="mm"/>
+            <xs:enumeration value="dip"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="ImageAlignment">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="LeftOrTop"/>
+            <xs:enumeration value="Center"/>
+            <xs:enumeration value="RightOrBottom"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="VerticalAlignment">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="Top"/>
+            <xs:enumeration value="Center"/>
+            <xs:enumeration value="Bottom"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="HorizontalAlignment">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="Left"/>
+            <xs:enumeration value="Center"/>
+            <xs:enumeration value="Right"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <!-- Structures -->
+    <xs:complexType name="FontInfo">
+        <xs:attribute name="Family" type="xs:string" use="required"/>
+        <xs:attribute name="Size" type="xs:float" use="required"/>
+        <xs:attribute name="Bold" type="Bool" use="required"/>
+        <xs:attribute name="Italic" type="Bool" use="required"/>
+        <xs:attribute name="Underline" type="Bool" use="required"/>
+        <xs:attribute name="Strikeout" type="Bool" use="required"/>
+    </xs:complexType>
+
+    <xs:complexType name="Color">
+        <xs:attribute name="Alpha" type="xs:unsignedByte" use="required"/>
+        <xs:attribute name="Red" type="xs:unsignedByte" use="required"/>
+        <xs:attribute name="Green" type="xs:unsignedByte" use="required"/>
+        <xs:attribute name="Blue" type="xs:unsignedByte" use="required"/>
+    </xs:complexType>
+
+    <xs:complexType name="Size">
+        <xs:attribute name="Width" type="xs:string" use="required"/>
+        <xs:attribute name="Height" type="xs:string" use="required"/>
+    </xs:complexType>
+
+    <xs:complexType name="Point">
+        <xs:attribute name="X" type="xs:string" use="required"/>
+        <xs:attribute name="Y" type="xs:string" use="required"/>
+    </xs:complexType>
+
+    <xs:complexType name="RoundRectangle">
+        <xs:attribute name="Y" type="xs:float" use="required"/>
+        <xs:attribute name="X" type="xs:float" use="required"/>
+        <xs:attribute name="Width" type="xs:float" use="required"/>
+        <xs:attribute name="Ry" type="xs:float" use="required"/>
+        <xs:attribute name="Rx" type="xs:float" use="required"/>
+        <xs:attribute name="Height" type="xs:float" use="required"/>
+    </xs:complexType>
+
+    <xs:complexType name="Rectangle">
+        <xs:attribute name="Y" type="xs:float" use="required"/>
+        <xs:attribute name="X" type="xs:float" use="required"/>
+        <xs:attribute name="Width" type="xs:float" use="required"/>
+        <xs:attribute name="Height" type="xs:float" use="required"/>
+    </xs:complexType>
+
+    <xs:complexType name="Thickness">
+        <xs:attribute name="Left" type="xs:float" use="required"/>
+        <xs:attribute name="Top" type="xs:float" use="required"/>
+        <xs:attribute name="Right" type="xs:float" use="required"/>
+        <xs:attribute name="Bottom" type="xs:float" use="required"/>
+    </xs:complexType>
+
+    <xs:complexType name="Line">
+        <xs:attribute name="Y2" type="xs:float" use="required"/>
+        <xs:attribute name="Y1" type="xs:float" use="required"/>
+        <xs:attribute name="X2" type="xs:float" use="required"/>
+        <xs:attribute name="X1" type="xs:float" use="required"/>
+    </xs:complexType>
+
+    <xs:complexType name="CutoutShape">
+        <xs:attribute name="Y" type="xs:float" use="required"/>
+        <xs:attribute name="X" type="xs:float" use="required"/>
+        <xs:attribute name="Width" type="xs:float" use="required"/>
+        <xs:attribute name="Style" type="DashStyle" use="required"/>
+        <xs:attribute name="Ry" type="xs:float" use="required"/>
+        <xs:attribute name="Rx" type="xs:float" use="required"/>
+        <xs:attribute name="Height" type="xs:float" use="required"/>
+    </xs:complexType>
+
+    <xs:complexType name="FoldLine">
+        <xs:attribute name="Y2" type="xs:float" use="required"/>
+        <xs:attribute name="Y1" type="xs:float" use="required"/>
+        <xs:attribute name="X2" type="xs:float" use="required"/>
+        <xs:attribute name="X1" type="xs:float" use="required"/>
+        <xs:attribute name="Style" type="DashStyle" use="required"/>
+    </xs:complexType>
+
+    <xs:complexType name="Arc">
+        <xs:attribute name="StartAngle" type="xs:float" use="required"/>
+        <xs:attribute name="Radius" type="xs:float" use="required"/>
+        <xs:attribute name="EndAngle" type="xs:float" use="required"/>
+        <xs:attribute name="CenterY" type="xs:float" use="required"/>
+        <xs:attribute name="CenterX" type="xs:float" use="required"/>
+    </xs:complexType>
+
+    <xs:complexType name="DieCutCustomPaperInfo">
+        <xs:sequence>
+            <xs:element name="Size" type="Size"/>
+            <xs:element name="PrintableSize" type="Size"/>
+            <xs:element name="PrintableOrigin" type="Point"/>
+            <xs:element name="Offset" type="Point" minOccurs="0"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="ContinuousCustomPaperInfo">
+        <xs:sequence>
+            <xs:element name="Leader" type="xs:float"/>
+            <xs:element name="Trailer" type="xs:float"/>
+            <xs:element name="Width" type="xs:float"/>
+            <xs:element name="PrintableWidth" type="xs:float"/>
+            <xs:element name="Offset" type="Point" minOccurs="0"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <!-- Misc -->
+    <xs:simpleType name="NotEmptyString">
+        <xs:restriction base="xs:string">
+            <xs:minLength value="1"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:complexType name="DrawCommands">
+        <xs:choice minOccurs="0" maxOccurs="unbounded">
+            <xs:element name="Rectangle" type="Rectangle"/>
+            <xs:element name="RoundRectangle" type="RoundRectangle"/>
+            <xs:element name="FoldLine" type="FoldLine"/>
+            <xs:element name="CutoutShape" type="CutoutShape"/>
+            <xs:element name="Path" type="PathDrawCommand"/>
+        </xs:choice>
+    </xs:complexType>
+
+    <!-- Classes -->
+
+    <xs:complexType name="PathDrawCommand">
+        <xs:sequence>
+            <xs:element name="FillMode" type="FillMode" minOccurs="0" maxOccurs="1"/>
+            <xs:choice maxOccurs="unbounded">
+                <xs:element name="Rectangle" type="Rectangle"/>
+                <xs:element name="RoundRectangle" type="RoundRectangle"/>
+                <xs:element name="Line" type="Line"/>
+                <xs:element name="LineTo" type="Point"/>
+                <xs:element name="Arc" type="Arc"/>
+            </xs:choice>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="LabelObject">
+        <xs:sequence>
+            <xs:element name="Name" type="xs:string"/>
+            <xs:element name="ForeColor" type="Color"/>
+            <xs:element name="BackColor" type="Color"/>
+            <xs:element name="LinkedObjectName" type="xs:string"/>
+            <xs:element name="Rotation" type="Rotation"/>
+            <xs:element name="IsMirrored" type="Bool"/>
+            <xs:element name="IsVariable" type="Bool"/>
+        </xs:sequence>
+        <xs:attribute name="Id" type="xs:int" use="optional" />
+        <xs:attribute name="RefId" type="xs:int" use="optional"/>
+    </xs:complexType>
+
+    <!-- Shape Object -->
+    <xs:simpleType name="ShapeType">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="Rectangle"/>
+            <xs:enumeration value="Ellipse"/>
+            <xs:enumeration value="HorizontalLine"/>
+            <xs:enumeration value="VerticalLine"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:complexType name="ShapeObject">
+        <xs:complexContent>
+            <xs:extension base="LabelObject">
+                <xs:sequence>
+                    <xs:element name="ShapeType" type="ShapeType"/>
+                    <xs:element name="LineWidth" type="xs:float"/>
+                    <xs:element name="LineAlignment" type="ImageAlignment"/>
+                    <xs:element name="FillColor" type="Color"/>
+                </xs:sequence>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+
+    <!-- Barcode Object -->
+    <xs:simpleType name="BarcodeType">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="Unknown"/>
+            <xs:enumeration value="Code39"/>
+            <xs:enumeration value="Code39CS"/>
+            <xs:enumeration value="Code128Auto"/>
+            <xs:enumeration value="Code128A"/>
+            <xs:enumeration value="Code128B"/>
+            <xs:enumeration value="Code128C"/>
+            <xs:enumeration value="Code2of5"/>
+            <xs:enumeration value="UpcA"/>
+            <xs:enumeration value="UpcE"/>
+            <xs:enumeration value="Ean8"/>
+            <xs:enumeration value="Ean13"/>
+            <xs:enumeration value="Codabar"/>
+            <xs:enumeration value="Postnet"/>
+            <xs:enumeration value="Code39LibR"/>
+            <xs:enumeration value="Code39LibL"/>
+            <xs:enumeration value="CodabarLibR"/>
+            <xs:enumeration value="CodabarLibL"/>
+            <xs:enumeration value="Code128Ean"/>
+            <xs:enumeration value="Itf14"/>
+            <xs:enumeration value="Planet"/>
+            <xs:enumeration value="Pdf417"/>
+            <xs:enumeration value="QRCode"/>
+            <xs:enumeration value="IMail"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="BarcodeSize">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="Small"/>
+            <xs:enumeration value="Medium"/>
+            <xs:enumeration value="Large"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="BarcodeTextEmbedding">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="None"/>
+            <xs:enumeration value="Half"/>
+            <xs:enumeration value="Full"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="BarcodeTextPosition">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="None"/>
+            <xs:enumeration value="Top"/>
+            <xs:enumeration value="Bottom"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:complexType name="BarcodeObject">
+        <xs:complexContent>
+            <xs:extension base="LabelObject">
+                <xs:sequence>
+                    <xs:element name="Text" type="xs:string"/>
+                    <xs:element name="Type" type="BarcodeType"/>
+                    <xs:element name="Size" type="BarcodeSize"/>
+                    <xs:element name="TextPosition" type="BarcodeTextPosition"/>
+                    <xs:element name="TextFont" type="FontInfo"/>
+                    <xs:element name="CheckSumFont" type="FontInfo"/>
+                    <xs:element name="TextEmbedding" type="BarcodeTextEmbedding"/>
+                    <xs:element name="ECLevel" type="xs:int"/>
+                    <xs:element name="HorizontalAlignment" type="HorizontalAlignment"/>
+                    <xs:element name="QuietZonesPadding" type="Thickness"/>
+                </xs:sequence>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+
+    <!-- Text-base object -->
+
+    <xs:simpleType name="TextVerticalAlignment">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="Top"/>
+            <xs:enumeration value="Middle"/>
+            <xs:enumeration value="Bottom"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="TextHorizontalAlignment">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="Left"/>
+            <xs:enumeration value="Center"/>
+            <xs:enumeration value="CenterBlock"/>
+            <xs:enumeration value="Right"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="TextFitMode">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="None"/>
+            <xs:enumeration value="ShrinkToFit"/>
+            <xs:enumeration value="AlwaysFit"/>
+            <!--<xs:enumeration value="WordWrap"/>-->
+        </xs:restriction>
+    </xs:simpleType>
+
+
+    <xs:group name="TextProperties">
+        <xs:sequence>
+            <xs:element name="HorizontalAlignment" type="TextHorizontalAlignment"/>
+            <xs:element name="VerticalAlignment" type="TextVerticalAlignment"/>
+            <xs:element name="TextFitMode" type="TextFitMode"/>
+            <xs:element name="UseFullFontHeight" type="Bool"/>
+            <xs:element name="Verticalized" type="Bool"/>
+        </xs:sequence>
+    </xs:group>
+
+
+    <xs:complexType name="StyledTextAttributes">
+        <xs:sequence>
+            <xs:element name="Font" type="FontInfo"/>
+            <xs:element name="ForeColor" type="Color"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="StyledTextElement">
+        <xs:sequence>
+            <xs:element name="String" type="xs:string"/>
+            <xs:element name="Attributes" type="StyledTextAttributes"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="StyledText">
+        <xs:sequence>
+            <xs:element name="Element" type="StyledTextElement" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <!-- DateTime object -->
+    <xs:simpleType name="DateTimeFormat">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="None"/>
+            <xs:enumeration value="LongSystemDate"/>
+            <xs:enumeration value="ShortSystemDate"/>
+            <xs:enumeration value="WeekdayLongMonthDayLongYear"/>
+            <xs:enumeration value="WeekdayDayLongMonthLongYear"/>
+            <xs:enumeration value="AbbrWeekdayAbbrMonthDayLongYear"/>
+            <xs:enumeration value="AbbrWeekdayDayAbbrMonthLongYear"/>
+            <xs:enumeration value="LongMonthDayLongYear"/>
+            <xs:enumeration value="DayLongMonthLongYear"/>
+            <xs:enumeration value="MonthDayLongYear"/>
+            <xs:enumeration value="DayMonthLongYear"/>
+            <xs:enumeration value="MonthDayYear"/>
+            <xs:enumeration value="DayMonthYear"/>
+            <xs:enumeration value="AbbrMonthDayLongYear"/>
+            <xs:enumeration value="AbbrMonthDayYear"/>
+            <xs:enumeration value="DayAbbrMonthLongYear"/>
+            <xs:enumeration value="DayAbbrMonthYear"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:complexType name="DateTimeObject">
+        <xs:complexContent>
+            <xs:extension base="LabelObject">
+                <xs:sequence>
+                    <xs:group ref="TextProperties"/>
+                    
+                    <xs:element name="DateTimeFormat" type="DateTimeFormat"/>
+                    <xs:element name="Font" type="FontInfo"/>
+                    <xs:element name="PreText" type="xs:string"/>
+                    <xs:element name="PostText" type="xs:string"/>
+                    <xs:element name="IncludeTime" type="Bool"/>
+                    <xs:element name="Use24HourFormat" type="Bool"/>
+                    <xs:element name="Culture" type="xs:string" minOccurs="0" maxOccurs="1"/>
+                </xs:sequence>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+
+    <xs:complexType name="CounterObject">
+        <xs:complexContent>
+            <xs:extension base="LabelObject">
+                <xs:sequence>
+                    <xs:group ref="TextProperties"/>
+
+                    <xs:element name="Font" type="FontInfo"/>
+                    <xs:element name="PreText" type="xs:string"/>
+                    <xs:element name="PostText" type="xs:string"/>
+                    <xs:element name="Start" type="xs:int"/>
+                    <xs:element name="Current" type="xs:int"/>
+                    <xs:element name="Increment" type="xs:int"/>
+                    <xs:element name="FormatWidth" type="xs:int"/>
+                    <xs:element name="UseLeadingZeros" type="Bool"/>
+                </xs:sequence>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+
+    <xs:complexType name="TextObject">
+        <xs:complexContent>
+            <xs:extension base="LabelObject">
+                <xs:sequence>
+                    <xs:group ref="TextProperties"/>
+
+                    <xs:element name="StyledText" type="StyledText"/>
+                </xs:sequence>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+
+    <!-- Address object-->
+
+    <xs:simpleType name="BarcodePosition">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="Suppress"/>
+            <xs:enumeration value="AboveAddress"/>
+            <xs:enumeration value="BelowAddress"/>
+        </xs:restriction>
+    </xs:simpleType>
+    
+    <xs:complexType name="LineFonts">
+        <xs:sequence>
+            <xs:element name="Font" type="FontInfo" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="AddressObject">
+        <xs:complexContent>
+            <xs:extension base="LabelObject">
+                <xs:sequence>
+                    <xs:group ref="TextProperties"/>
+
+                    <xs:element name="StyledText" type="StyledText"/>
+                    <xs:element name="ShowBarcodeFor9DigitZipOnly" type="Bool"/>
+                    <xs:element name="BarcodePosition" type="BarcodePosition"/>
+                    <xs:element name="LineFonts" type="LineFonts" minOccurs="0" maxOccurs="1"/>
+                </xs:sequence>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+
+    <!-- CircularText object-->
+
+    <xs:simpleType name="DisplayMode">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="ArcTextTop"/>
+            <xs:enumeration value="ArcTextBottom"/>
+            <xs:enumeration value="CircularText"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="CircleTextAlignment">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="CenterAtTop"/>
+            <xs:enumeration value="CenterAtBottom"/>
+            <xs:enumeration value="StartAngle"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:complexType name="CircularTextObject">
+        <xs:complexContent>
+            <xs:extension base="LabelObject">
+                <xs:sequence>
+                    <xs:element name="Text" type="xs:string"/>
+                    <xs:element name="Font" type="FontInfo"/>
+
+                    <xs:element name="StartAngle" type="xs:float"/>
+                    <xs:element name="Mode" type="DisplayMode"/>
+                    <xs:element name="CircleAlignment" type="CircleTextAlignment"/>
+                    <xs:element name="TextAlignment" type="TextHorizontalAlignment"/>
+                    <xs:element name="VerticalAlignment" type="TextVerticalAlignment"/>
+                </xs:sequence>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+
+    <!-- Image object -->
+    <xs:simpleType name="ScaleMode">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="None"/>
+            <xs:enumeration value="Fill"/>
+            <xs:enumeration value="Uniform"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:complexType name="ImageObject">
+        <xs:complexContent>
+            <xs:extension base="LabelObject">
+                <xs:sequence>
+                    <xs:choice>
+                        <xs:element name="ImageLocation" type="xs:string"/>
+                        <xs:element name="Image" type="xs:base64Binary"/>
+                    </xs:choice>
+                    <xs:element name="ScaleMode" type="ScaleMode"/>
+                    <xs:element name="BorderWidth" type="xs:float"/>
+                    <xs:element name="BorderColor" type="Color"/>
+                    <xs:element name="HorizontalAlignment" type="HorizontalAlignment"/>
+                    <xs:element name="VerticalAlignment" type="VerticalAlignment"/>
+                    
+                </xs:sequence>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+
+    <!-- Any label object -->
+    <xs:group name="AnyLabelObject">
+        <xs:choice>
+            <xs:element name="ShapeObject" type="ShapeObject"/>
+            <xs:element name="BarcodeObject" type="BarcodeObject"/>
+            <xs:element name="DateTimeObject" type="DateTimeObject"/>
+            <xs:element name="CounterObject" type="CounterObject"/>
+            <xs:element name="TextObject" type="TextObject"/>
+            <xs:element name="AddressObject" type="AddressObject"/>
+            <xs:element name="ImageObject" type="ImageObject"/>
+            <xs:element name="CircularTextObject" type="CircularTextObject"/>
+        </xs:choice>
+    </xs:group>
+
+    <!-- DieCut label-->
+    
+    <xs:complexType name="ObjectInfo">
+        <xs:sequence>
+            <xs:group ref="AnyLabelObject"/>
+            <xs:element name="Bounds" type="Rectangle"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="Label">
+        <xs:sequence>
+            <xs:element name="PaperOrientation" type="PaperOrientation"/>
+            <xs:element name="Id" type="xs:string"/>
+        </xs:sequence>
+
+        <xs:attribute name="Version" type="xs:string" use="required"/>
+        <xs:attribute name="Units" type="Units" use="required"/>
+    </xs:complexType>
+
+    <xs:complexType name="DieCutLabel">
+        <xs:complexContent>
+            <xs:extension base="Label">
+                <xs:sequence>
+                    <xs:choice>
+                        <xs:element name="PaperName" type="xs:string"/>
+                        <xs:element name="CustomPaper" type="DieCutCustomPaperInfo"/>
+                    </xs:choice>
+                    <xs:element name="DrawCommands" type="DrawCommands"/>
+                    <xs:element name="ObjectInfo" type="ObjectInfo" minOccurs="0" maxOccurs="unbounded"/>
+                </xs:sequence>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+
+    <!-- Continuous label-->
+    
+    <xs:simpleType name="ContinuousLengthMode">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="Auto"/>
+            <xs:enumeration value="Fixed"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="CellLengthMode">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="Auto"/>
+            <xs:enumeration value="Fixed"/>
+            <xs:enumeration value="Star"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:group name="CellProperties">
+        <xs:sequence>
+            <xs:element name="Length" type="xs:float"/>
+            <xs:element name="LengthMode" type="CellLengthMode"/>
+            <xs:element name="BorderWidth" type="xs:float" minOccurs="0"/>
+            <xs:element name="BorderStyle" type="DashStyle" minOccurs="0"/>
+            <xs:element name="BorderColor" type="Color" minOccurs="0"/>
+        </xs:sequence>
+    </xs:group>
+        
+    <xs:complexType name="Cell">
+        <xs:sequence>
+            <xs:choice>
+                <xs:sequence>
+                    <xs:group ref="AnyLabelObject"/>
+                    <xs:element name="ObjectMargin" type="Thickness" minOccurs="0"/>
+                    <xs:group ref="CellProperties"/>
+                </xs:sequence>
+                <xs:sequence>
+                    <xs:group ref="CellProperties"/>
+                    <xs:element name="SubcellsOrientation" type="Orientation"/>
+                    <xs:element name="Subcells">
+                        <xs:complexType>
+                            <xs:sequence>
+                                <xs:element name="Cell" type="Cell" minOccurs="0" maxOccurs="unbounded"/>
+                            </xs:sequence>
+                        </xs:complexType>
+                    </xs:element>
+                </xs:sequence>
+            </xs:choice>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="ContinuousLabel">
+        <xs:complexContent>
+            <xs:extension base="Label">
+                <xs:sequence>
+                    <xs:choice>
+                        <xs:element name="PaperName" type="xs:string"/>
+                        <xs:element name="CustomPaper" type="ContinuousCustomPaperInfo"/>
+                    </xs:choice>
+                    <xs:element name="LengthMode" type="ContinuousLengthMode"/>
+                    <xs:element name="LabelLength" type="xs:float"/>
+                    <xs:element name="RootCell" type="Cell"/>
+                </xs:sequence>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+
+    <!-- Elements -->
+    <xs:element name="DieCutLabel" type="DieCutLabel"/>
+    <xs:element name="ContinuousLabel" type="ContinuousLabel"/>
+
+</xs:schema>

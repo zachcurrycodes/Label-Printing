@@ -1,0 +1,133 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="BOXX_V2Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="tbl_Label">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="25" Nullable="false" />
+          <Property Name="Type" Type="varchar" MaxLength="25" Nullable="false" />
+          <Property Name="XML" Type="xml" Nullable="false" />
+          <Property Name="DynamicXMLField" Type="varchar" MaxLength="25" />
+          <Property Name="StoredProcedure" Type="varchar" MaxLength="25" />
+          <Property Name="ValidPrinters" Type="varchar" MaxLength="1000" />
+          <Property Name="ActiveInactive" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tbl_LabelToPrint">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="LabelText" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="LabelType" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="PrinterName" Type="varchar" MaxLength="100" />
+          <Property Name="CompletedLabelXML" Type="xml" />
+          <Property Name="LabelPrinted" Type="int" />
+          <Property Name="DateTimeEntered" Type="datetime" />
+          <Property Name="DateTimePrinted" Type="datetime" />
+          <Property Name="ErrorInformation" Type="varchar" MaxLength="1000" />
+        </EntityType>
+        <EntityContainer Name="BOXX_V2ModelStoreContainer">
+          <EntitySet Name="tbl_Label" EntityType="Self.tbl_Label" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tbl_LabelToPrint" EntityType="Self.tbl_LabelToPrint" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="BOXX_V2Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="tbl_Label">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="25" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Type" Type="String" MaxLength="25" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="XML" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="DynamicXMLField" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+          <Property Name="StoredProcedure" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+          <Property Name="ValidPrinters" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+          <Property Name="ActiveInactive" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tbl_LabelToPrint">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="LabelText" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="LabelType" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="PrinterName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="CompletedLabelXML" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="LabelPrinted" Type="Int32" />
+          <Property Name="DateTimeEntered" Type="DateTime" Precision="3" />
+          <Property Name="DateTimePrinted" Type="DateTime" Precision="3" />
+          <Property Name="ErrorInformation" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityContainer Name="BOXX_V2Entities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="tbl_Label" EntityType="Self.tbl_Label" />
+          <EntitySet Name="tbl_LabelToPrint" EntityType="Self.tbl_LabelToPrint" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="BOXX_V2ModelStoreContainer" CdmEntityContainer="BOXX_V2Entities">
+          <EntitySetMapping Name="tbl_Label">
+            <EntityTypeMapping TypeName="BOXX_V2Model.tbl_Label">
+              <MappingFragment StoreEntitySet="tbl_Label">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Type" ColumnName="Type" />
+                <ScalarProperty Name="XML" ColumnName="XML" />
+                <ScalarProperty Name="DynamicXMLField" ColumnName="DynamicXMLField" />
+                <ScalarProperty Name="StoredProcedure" ColumnName="StoredProcedure" />
+                <ScalarProperty Name="ValidPrinters" ColumnName="ValidPrinters" />
+                <ScalarProperty Name="ActiveInactive" ColumnName="ActiveInactive" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_LabelToPrint">
+            <EntityTypeMapping TypeName="BOXX_V2Model.tbl_LabelToPrint">
+              <MappingFragment StoreEntitySet="tbl_LabelToPrint">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="LabelText" ColumnName="LabelText" />
+                <ScalarProperty Name="LabelType" ColumnName="LabelType" />
+                <ScalarProperty Name="PrinterName" ColumnName="PrinterName" />
+                <ScalarProperty Name="CompletedLabelXML" ColumnName="CompletedLabelXML" />
+                <ScalarProperty Name="LabelPrinted" ColumnName="LabelPrinted" />
+                <ScalarProperty Name="DateTimeEntered" ColumnName="DateTimeEntered" />
+                <ScalarProperty Name="DateTimePrinted" ColumnName="DateTimePrinted" />
+                <ScalarProperty Name="ErrorInformation" ColumnName="ErrorInformation" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
